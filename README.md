@@ -1,7 +1,7 @@
 # RealScale AI APPS - AI Image Upscaler With Real-ESRGAN
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Naryou99/Final-Project-Real-ESRGAN-implementation-RealScale-AI-apps/main/assets/demo%20app.gif" alt="Demo Aplikasi RealScale AI" width="600"/>
+  <img src="https://raw.githubusercontent.com/Naryou99/Final-Project-Real-ESRGAN-implementation-RealScale-AI-apps/main/assets/demo%20app.gif" alt="Demo Aplikasi RealScale AI" width="300"/>
 </p>
 
 Aplikasi mobile android yang dikembangkan menggunakan Flutter dengan dukungan backend berbasis Python (FastAPI) untuk meningkatkan kualitas gambar menggunakan model Real-ESRGAN yang canggih. Proyek ini menampilkan integrasi lengkap dari model kecerdasan buatan berbasis PyTorch ke dalam aplikasi mobile modern, mulai dari backend hingga antarmuka pengguna.
