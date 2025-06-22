@@ -5,7 +5,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'image_service.dart';
 
-// Class helper untuk memotong gambar (tidak ada perubahan)
 class _ImageClipper extends CustomClipper<Rect> {
   final double clipFactor;
   _ImageClipper({required this.clipFactor});
@@ -46,8 +45,6 @@ class ImageUpscalerScreenState extends State<ImageUpscalerScreen> {
   int _originalHeight = 0;
   String _originalFormat = '';
   String _originalFileName = '';
-
-  // State dan fungsi untuk notifikasi kustom
   bool _isNotificationVisible = false;
   String _notificationMessage = '';
   IconData _notificationIcon = Icons.check_circle;
