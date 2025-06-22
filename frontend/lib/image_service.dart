@@ -78,22 +78,12 @@ class ImageService {
       rethrow;
     }
   }
-
-  // ===================================================================
-  // PERUBAHAN: Menambahkan parameter useFaceEnhance dan logika penamaan file
-  // ===================================================================
+  
   Future<bool> saveImageToCustomPath(File imageFile, String directoryPath, String originalName, String scale, String format, bool useFaceEnhance) async {
     try {
-      // Mengambil nama dasar file tanpa ekstensi
       String baseName = originalName.contains('.') ? originalName.substring(0, originalName.lastIndexOf('.')) : originalName;
-      
-      // Menambahkan tag _faceenhance jika fiturnya aktif
       String faceEnhanceTag = useFaceEnhance ? "_faceenhanced" : "";
-      
-      // Membuat nama file baru yang deskriptif
-      // Contoh: foto_asli_upscaled_2x_faceenhanced.png
       String finalFileName = '${baseName}_upscaled_${scale}${faceEnhanceTag}.${format.toLowerCase()}';
-      
       final newPath = '$directoryPath/$finalFileName';
       
       await imageFile.copy(newPath);
