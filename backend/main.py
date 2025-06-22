@@ -11,10 +11,8 @@ from basicsr.archs.rrdbnet_arch import RRDBNet
 from realesrgan import RealESRGANer
 from gfpgan import GFPGANer
 
-# Menambah batas ukuran file unggahan
 MultiPartParser.max_file_size = 200 * 1024 * 1024 
 
-# --- (Bagian Konfigurasi dan Pemuatan Model tidak ada perubahan) ---
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 app = FastAPI(title="Optimized Real-ESRGAN API")
@@ -93,7 +91,6 @@ async def upscale_image(
 
         logger.info(f"Memulai proses upscale dengan outscale_factor: {outscale_factor}")
         
-        # Logika upscale dasar tetap sama, selalu ke 4x terlebih dahulu
         if use_face_enhance:
             _, _, upscaled_4x_image = face_enhancer.enhance(img, has_aligned=False, only_center_face=False, paste_back=True)
         else:
@@ -102,9 +99,6 @@ async def upscale_image(
 
         final_output = upscaled_4x_image
         
-        # ===================================================================
-        # LOGIKA RESIZE DIPERBARUI UNTUK SEMUA SKALA
-        # ===================================================================
         is_portrait = original_height > original_width
         
         if scale_option.lower() == '2k':
